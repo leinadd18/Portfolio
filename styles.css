@@ -161,11 +161,6 @@ ul a:hover {
     overflow: hidden;
 }
 
-.card-projeto a {
-    color: #4d7cfe;
-    text-decoration: none;
-}
-
 .info-projeto {
     padding: 20px;
 
@@ -179,6 +174,51 @@ ul a:hover {
     color: #bbb;
     margin-bottom: 15px;
     text-align: left;
+}
+
+.caixa {
+    display: flex;
+    position: relative;
+    top: 10px;
+    justify-content: center;
+}
+
+.info-projeto span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.links-projeto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.links-projeto a {
+    background-color: #2657dd;
+    color: #e8dede;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    transition: all .1s ease-out;
+}
+
+.links-projeto a:hover {
+   opacity: .7;
+   background-color: #0c3fce;
+}
+
+.links-projeto a:active {
+    transform: scale(0.85);
 }
 
 .info-projeto {
@@ -390,6 +430,18 @@ footer {
     transition: all 2s;
 }
 
+.projeto-oculto {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.projeto-visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 @media (max-width: 768px) {
     header {
         padding: 20px;
@@ -428,8 +480,20 @@ footer {
         margin-bottom: 17px;
     }
 
+    .links-projeto a {
+        text-decoration: none;
+        padding: 7px;
+        border-radius: 13px;
+        font-size: 13px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+    }
+
+
     .img-sobre {
-        height: 370px;
+        height: 380px;
     }
 
     .conteudo-sobre h2 {
@@ -447,12 +511,11 @@ footer {
 
     .botoes-contatos {
         width: 395px;
-        position: relative;
-        right: 15px;
     }
 
     footer {
         padding: 18px 5%;
         font-size: 14px;
     }
+
 }

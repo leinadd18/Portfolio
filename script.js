@@ -48,3 +48,20 @@
  })
 
  element.forEach((secao) =>  olha2.observe(secao));
+
+ // Seleciona todos os projetos ocultos
+const projetosOcultos = document.querySelectorAll('.projeto-oculto');
+
+const observerProjetos = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('projeto-visivel');
+            }, index * 300); // Atraso progressivo (300ms por projeto)
+        }else {
+            entry.target.classList.remove('projeto-visivel');
+        }
+    });
+}, { threshold: 0.2 });
+
+projetosOcultos.forEach((projeto) => observerProjetos.observe(projeto));
